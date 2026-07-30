@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
+authors:
+  - family-names: Siepe
+    given-names: Florian
+  - family-names: Prinz
+    given-names: Thomas Peter
+  - family-names: Papenbrock
+    given-names: Thorsten
+title: 'ModelForge: A Metric Approach to Machine Learning Model Consolidation'
+version: 1.0.0
+doi: 10.1109/DSAA65442.2025.11247992
+date-released: '2025-01-20'
+preferred-citation:
+  authors:
+    - family-names: Siepe
+      given-names: Florian
+    - family-names: Prinz
+      given-names: Thomas Peter
+    - family-names: Papenbrock
+      given-names: Thorsten
+  title: 'ModelForge: A Metric Approach to Machine Learning Model Consolidation'
+  doi: 10.1109/DSAA65442.2025.11247992
+  type: conference-paper
+  pages: 1-12
+  year: '2025'
+  collection-title: 2025 IEEE 12th International Conference on Data Science and Advanced Analytics (DSAA)
+  conference: Data Science and Advanced Analytics (DSAA)
+  publisher: IEEE

@@ -87,7 +87,7 @@ def prepare_data_set_and_train_prob(
         "global", pd.concat(dfs_train), pd.concat(dfs_test)
     )
     global_error = global_model.metadata["model_metrics"]["test_crps"]
-    shutil.rmtree(processed_filepath + "/prob/point/global")
+    shutil.rmtree(processed_filepath + "/prob/point/global", ignore_errors=True)
 
     weather_entities = client.map(prob_trainer.train, entity_ids, dfs_train, dfs_test)
     logger.info(f"Submitted {len(weather_entities)} training tasks")
@@ -109,7 +109,7 @@ def prepare_data_set_and_train_reg(
         "global", pd.concat(dfs_train), pd.concat(dfs_test)
     )
     global_error = global_model.metadata["model_metrics"]["test_mean_absolute_error"]
-    shutil.rmtree(processed_filepath + "/reg/point/global")
+    shutil.rmtree(processed_filepath + "/reg/point/global", ignore_errors=True)
     logger.info("Trained global set. Error: " + str(global_error))
 
     if model_type == "nn":

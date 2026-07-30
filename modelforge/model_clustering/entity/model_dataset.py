@@ -18,7 +18,7 @@ class ModelDataSet:
         return [self.model_entity_by_id(key) for key in self.model_entity_ids()]
 
     def model_entity_ids(self) -> List[Union[int, str]]:
-        return [key for key in sorted(self._model_entities.keys())]
+        return sorted(self._model_entities.keys(), key=str)
 
     def model_entity_by_id(self, entity_id: Union[int, str]):
         return self._model_entities.get(entity_id)

@@ -48,11 +48,12 @@ def clean_pipeline_group(pipeline: str) -> str:
     raise ValueError(pipeline)
 
 
-def read_experiment_results(experiment: str, experiment_date: str):
+def read_experiment_results(experiment: str):
     pipeline_regex = re.compile(r"^(.*)_\d{4}-\d{2}-\d{2}-\d{2}:\d{2}$")
 
     rows = []
     for dataset, loss, loss_maximize in zip(datasets, losses, losses_maximize):
+        experiment_date = find_latest_experiment_date(experiment, dataset)
         pipeline_groups = [
             dir
             for dir in os.listdir(f"../../data/results/{experiment}/{dataset}")
@@ -116,3 +117,17 @@ def read_experiment_results(experiment: str, experiment_date: str):
                     }
                 )
     return pd.DataFrame(rows), pipeline_groups, pipeline_groups_clean
+
+
+def find_latest_experiment_date(experiment: str, dataset: str) -> str:
+    experiment_path = f"../../data/results/{experiment}/{dataset}"
+    if not os.path.exists(experiment_path):
+        return None
+    dates = [
+        dir.split("_")[-1]
+        for dir in os.listdir(experiment_path)
+        if os.path.isdir(os.path.join(experiment_path, dir))
+    ]
+    if not dates:
+        return None
+    return max(dates, key=lambda d: d)

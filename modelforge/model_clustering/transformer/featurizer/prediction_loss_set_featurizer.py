@@ -109,7 +109,8 @@ class PredictionLossSetFeaturizer(Featurizer):
                     for model_entity in self.model_sampler.get_sample_candidates(
                         model_dataset
                     )
-                ]
+                ],
+                key=str,
             )
         else:
             self.column_ids_ = model_dataset.model_entity_ids()

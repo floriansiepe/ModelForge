@@ -60,7 +60,16 @@ Our research demonstrates significant efficiency gains when using ModelForge for
 If you use ModelForge in your research, please cite our paper:
 
 ```bibtex
-TDB
+@inproceedings{Siepe2025,
+  author={Siepe, Florian and Prinz, Thomas Peter and Papenbrock, Thorsten},
+  booktitle={2025 IEEE 12th International Conference on Data Science and Advanced Analytics (DSAA)}, 
+  title={ModelForge: A Metric Approach to Machine Learning Model Consolidation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-12},
+  doi={10.1109/DSAA65442.2025.11247992}
+}
 ```
 
 ## 🤝 Contributing
